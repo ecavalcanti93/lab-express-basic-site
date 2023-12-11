@@ -1,0 +1,272 @@
+html,body {
+    margin:0;
+    padding:0;
+}
+
+body {
+    background-image: url('/styles/img/bggorillaz.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    display: flex;
+    gap: 1rem;
+}
+
+li {
+    list-style: none;
+    margin-top: 15px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+p{
+    margin: 10px;
+    color: white;
+}
+
+h2{
+    color: white;
+}
+
+.container{
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container .card{
+    position: relative;
+    width: 300px;
+    height: 420px;
+    margin: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.125);  
+    filter: drop-shadow(0 30px 10px rgba(0,0,0,0.125));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.btn {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 12px;
+    font-size: 0.8rem;  
+    letter-spacing: 2px;  
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    margin: 15px;
+  }
+
+.circle{
+    text-align: center;
+}
+
+.content{
+    text-align: center;
+}
+
+.perfil{
+    text-align: center;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+
+.photo {
+    border-radius: 20px;
+}
+
+.logo{
+    width: 10px;
+}
+
+.container2{
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container2 .card {
+    position: relative;
+    width: 1300px;
+    height: 600px;
+    margin: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.125);  
+    filter: drop-shadow(0 30px 10px rgba(0,0,0,0.125));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.gallery{
+	flex-wrap: wrap-reverse;
+	gap: 0.5rem;
+	column-count: 2;
+	margin-bottom: 100px;
+}
+
+body{
+	font-family: 'Oswald', sans-serif;
+	background-color: #212121;
+	section{
+		width: 90%;
+		max-width: 1200px;
+		margin: 0 auto;
+		.row{
+            display: flex;
+            gap: 2rem;
+			justify-content: center;
+    	height: 100vh;
+		}
+	}
+}
+.card{
+	position: relative;
+	height: 200px;
+	width: 200px;
+	margin: 10px 0;
+	transition: ease all $transition-time;
+	perspective: 1200px;
+	&:hover{
+		.cover{
+			transform: rotateX(0deg) rotateY(-180deg);
+			&:before{
+				transform: translateZ(30px);
+			}
+			&:after{
+				background-color: black;
+			}
+			h1{
+				transform: translateZ(100px);
+			}
+			.price{
+				transform: translateZ(60px);
+			}
+			a{
+				transform: translateZ(-60px) rotatey(-180deg);
+			}
+		}
+	}
+	
+	.cover{
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		transform-style: preserve-3d;
+  	transition: ease all $transition-time;
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		&:before{
+			content: '';
+			position: absolute;
+			border: 5px solid rgba(255,255,255,.5);
+			box-shadow: 0 0 12px rgba(0,0,0,.3); 
+			top:20px;
+			left:20px;
+			right:20px;
+			bottom:20px;
+			z-index: 2;
+			transition: ease all $transition-time;
+			transform-style: preserve-3d;
+			transform: translateZ(0px);
+		}
+		&:after{
+			content: '';
+			position: absolute;
+			top:0px;
+			left:0px;
+			right:0px;
+			bottom:0px;
+			z-index: 2;
+			transition: ease all 1.3s;
+			background: rgba(0,0,0,.4);
+		}
+		&.item-a{
+			background-image: url('/styles/img/demondays.jpg');
+		}
+		&.item-b{
+			background-image: url('/styles/img/gorillaz.jpg');
+		}
+		&.item-c{
+			background-image: url('/styles/img/plastic.jpg');
+		}
+        &.item-d{
+			background-image: url('/styles/img/cracker.jpeg');
+		}
+		h1{
+			font-weight: 100;
+			position: absolute;
+			left: 30px;
+            top:70px;
+			color: white;
+			transform-style: preserve-3d;
+  		transition: ease all $transition-time;
+			z-index:3;
+			font-size: 2em;
+			transform: translateZ(0px);
+		}
+		
+	.card-back{
+		position: absolute;
+		height: 200px;
+		width: 200px;
+		background: #0b0f08;
+		transform-style: preserve-3d;
+  	transition: ease all $transition-time;
+		transform: translateZ(-1px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		a{
+			transform-style: preserve-3d;
+			transition: ease transform $transition-time, ease background .5s;
+			transform: translateZ(-1px) rotatey(-180deg);
+			background: transparent;
+			border: 1px solid white;
+			font-weight: 200;
+			font-size: 1.3em;
+			color: white;
+			padding: 14px 32px;
+			outline: none;
+			text-decoration: none;
+			&:hover{
+				background-color: white;
+				color: #0b0f08;
+			}
+		}
+	}
+}
+
+
+
+
+
